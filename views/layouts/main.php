@@ -60,6 +60,7 @@ AppAsset::register($this);
                         'items' => [
                                 ['label' => 'Basic Table', 'url' => ['/product/index']],
                                 ['label' => 'DataTables', 'url' => ['/product/index2']],
+                                ['label' => 'Ajax DataTable', 'url' => ['/product/data-table']],
 //                                ['label' => 'Ajax DataTable', 'url' => ['/site/ajax']],
 //                                ['label' => 'Search Options Column Search', 'url' => ['/site/datatable']],
 //                                ['label' => 'Buttons', 'url' => ['/site/buttons']],

@@ -11,19 +11,19 @@ use yii\widgets\ActiveForm;
 <div class="products-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['index'],
+        'action' => ['datatables'],
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?php // echo $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'order_no') ?>
+    <?php // echo $form->field($model, 'order_no') ?>
 
     <?= $form->field($model, 'country') ?>
 
-    <?= $form->field($model, 'ship_city') ?>
+    <?php // echo $form->field($model, 'ship_city') ?>
 
-    <?= $form->field($model, 'ship_address') ?>
+    <?php // echo $form->field($model, 'ship_address') ?>
 
     <?php // echo $form->field($model, 'company_agent') ?>
 
@@ -39,7 +39,6 @@ use yii\widgets\ActiveForm;
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
     </div>
-
     <?php ActiveForm::end(); ?>
-
-</div>
+   
+ </div>

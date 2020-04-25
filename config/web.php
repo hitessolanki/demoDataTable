@@ -16,6 +16,13 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'zK8MbqOgjoc-FXiP4PLQsim7YlbkltGJ',
         ],
+        'assetManager' => [
+            'bundles' =>[
+                'nullref\datatable\assets\DataTableAsset' => [
+                    'styling' => \nullref\datatable\assets\DataTableAsset::STYLING_BOOTSTRAP,
+                ]
+            ],
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

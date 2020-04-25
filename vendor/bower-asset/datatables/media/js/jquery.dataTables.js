@@ -6053,6 +6053,7 @@
 	
 		// ARIA attributes - need to loop all columns, to update all (removing old
 		// attributes as needed)
+		var sTitle;
 		for ( var i=0, iLen=columns.length ; i<iLen ; i++ )
 		{
 			var col = columns[i];

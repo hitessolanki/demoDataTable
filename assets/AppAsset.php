@@ -17,26 +17,26 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-//    public $basePath = '@webroot';
-//    public $baseUrl = '@web';
-   public $sourcePath = '@app/themes/lbizz/';
+    public $basePath = '@webroot';
+    public $baseUrl = '@web';
+//   public $sourcePath = '@app/themes/lbizz/';
     public $css = [
         'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700',
-        'assets/css/datatables/datatables.bundles.css',
-        // 'assets/css/datatables/custome.css',
-        // 'assets/css/datatables/plugins.bundle.css', 
-        // 'assets/css/datatables/style.bundle.css',
+//        'assets/css/datatables/datatables.bundles.css',
+//         'assets/css/datatables/custome.css',
+//         'assets/css/datatables/plugins.bundle.css', 
+//         'assets/css/datatables/style.bundle.css',
     ];
     public $js = [
         'https://www.googletagmanager.com/gtag/js?id=UA-37564768-1',
-        // 'assets/js/datatables/plugins.bundel.js',
-        // 'assets/js/datatables/script.bundel.js',
-        // 'assets/js/datatables/basic.js',
-        // 'assets/js/datatables/datatables.bundle.js',
-        // 'assets/js/datatables/scrollable.js',
-        // 'assets/js/datatables/ajax.js',
-        // 'assets/js/datatables/search.js',
-        // 'assets/js/datatables/buttons.js'
+//         'assets/js/datatables/plugins.bundel.js',
+//         'assets/js/datatables/script.bundel.js',
+//         'assets/js/datatables/basic.js',
+//         'assets/js/datatables/datatables.bundle.js',
+//         'assets/js/datatables/scrollable.js',
+//         'assets/js/datatables/ajax.js',
+//         'assets/js/datatables/search.js',
+//         'assets/js/datatables/buttons.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
