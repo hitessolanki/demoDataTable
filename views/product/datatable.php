@@ -20,7 +20,7 @@ use yii\widgets\Pjax;
     \nullref\datatable\DataTable::widget([
        'processing' => true,
        'serverSide' => true,
-       'ajax' => Url::to(['datatables']),
+       'ajax' => Url::to(['datatables','search[country]'=> Yii::$app->request->get('country')]),
         'tableOptions' => [
             'class' => 'table table-bordered',
             'scrollY' => '200px',

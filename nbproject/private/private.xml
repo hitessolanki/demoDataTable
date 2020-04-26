@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/demoDataTable/views/product/create.php</file>
-            <file>file:/var/www/html/demoDataTable/models/Products.php</file>
             <file>file:/var/www/html/demoDataTable/views/product/datatable.php</file>
-            <file>file:/var/www/html/demoDataTable/views/product/index2.php</file>
             <file>file:/var/www/html/demoDataTable/views/product/_search.php</file>
-            <file>file:/var/www/html/demoDataTable/views/product/index.php</file>
-            <file>file:/var/www/html/demoDataTable/views/layouts/main.php</file>
             <file>file:/var/www/html/demoDataTable/controllers/ProductController.php</file>
-            <file>file:/var/www/html/demoDataTable/models/Productssearch.php</file>
         </group>
     </open-files>
 </project-private>

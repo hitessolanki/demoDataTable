@@ -11,7 +11,8 @@ use yii\widgets\ActiveForm;
 <div class="products-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['datatables'],
+        'id'=>'frm_filter',
+        'action' => '#',
         'method' => 'get',
     ]); ?>
 
@@ -19,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'order_no') ?>
 
-    <?= $form->field($model, 'country') ?>
+    <?php echo $form->field($model, 'country')->textInput(['name' => 'country','value'=>Yii::$app->request->get('country')]) ?>
 
     <?php // echo $form->field($model, 'ship_city') ?>
 

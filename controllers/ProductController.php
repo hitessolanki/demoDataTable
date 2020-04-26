@@ -29,7 +29,7 @@ class ProductController extends Controller {
     }
 
     public function actions() {
-        
+
         return [
             'datatables' => [
                 'class' => 'nullref\datatable\DataTableAction',
@@ -43,21 +43,33 @@ class ProductController extends Controller {
                     return $query->orderBy($orderBy);
                 },
                 'applyFilter' => function($query, $columns, $search) {
+//                    if (isset($search['country']) && $search['country'] != "") {
+////                        $query->andFilterWhere(['like', 'country',$search['country']]);
+//                        $search['value'] = $search['country'];
+//                    }
                     //custom search logic
-                    
-                            $modelClass = $query->modelClass;
-                            $schema = $modelClass::getTableSchema()->columns;
-                            foreach ($columns as $column) {
-                                if ($column['searchable'] == 'true' && array_key_exists($column['data'], $schema) !== false) {
-                                    $value = empty($search['value']) ? isset($column['search']['value']) : $search['value'];
-                                    $query->orFilterWhere(['like', $column['data'], $value]);
-                                }
-                     }
+
+                    $modelClass = $query->modelClass;
+                    $schema = $modelClass::getTableSchema()->columns;
+                    foreach ($columns as $column) {
+                        if ($column['searchable'] == 'true' && array_key_exists($column['data'], $schema) !== false) {
+                            $value = empty($search['value']) ? isset($column['search']['value']) : $search['value'];
+                            if((isset($search['country']) && $search['country'] != "")){
+                                $query->orFilterWhere(['like', 'country' , $search['country']]);
+                            }else{
+                            $query->orFilterWhere(['like', $column['data'], $value]);    
+                            }
+                            
+                        }
+                    }
+//                    echo $query->createCommand()->rawSql;
+//                    exit;
                     return $query;
                 },
             ],
         ];
     }
+
     /**
      * Lists all Products models.
      * @return mixed
@@ -68,7 +80,6 @@ class ProductController extends Controller {
         return $this->render('index', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
-                    
         ]);
     }
 
@@ -94,18 +105,20 @@ class ProductController extends Controller {
                     'model' => $this->findModel($id),
         ]);
     }
+
     /**
      * Datatables 
      */
     public function actionDataTable() {
 //        $searchModel = new Productssearch();
 //        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $model= new Products();
+        $model = new Products();
 //        if(Yii::$app->request->queryParams){
 //            return $this->render('datatable',['searchModel' => $model,'country'=>Yii::$app->request->queryParams['Products']['country']]);
 //        }
-        return $this->render('datatable',['searchModel' => $model]);
+        return $this->render('datatable', ['searchModel' => $model]);
     }
+
     /**
      * Creates a new Products model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -169,4 +182,5 @@ class ProductController extends Controller {
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }
